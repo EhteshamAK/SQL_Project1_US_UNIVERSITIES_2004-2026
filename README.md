@@ -1,11 +1,11 @@
 # SQL_Project1_US_UNIVERSITIES_2004-2026
 SQL project analyzing top US universities to compare private vs public institutions, national rankings, research impact, international student ratios, employment rates, and state-wise distribution. Demonstrates data aggregation, analytical queries, and professional insights.
 
-Project Overview
+## Project Overview
 
 This project analyzes top US universities using MySQL. The focus is on understanding differences between private and public institutions, exploring rankings, research impact, international student ratios, employment rates, and state-wise distribution.
 
-Objectives
+## Objectives
 
 Compare the number of private vs public universities
 
@@ -21,13 +21,13 @@ Compare employment outcomes across institutions
 
 Explore state-level distribution of universities
 
-Tools Used
+## Tools Used
 
 MySQL
 
 SQL queries (SELECT, GROUP BY, ORDER BY, AVG, COUNT, LIMIT)
 
-Key Insights
+## Key Insights
 
 Private universities tend to have higher research impact scores and attract more international students
 
