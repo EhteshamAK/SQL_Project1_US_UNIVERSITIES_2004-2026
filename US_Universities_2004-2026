@@ -1,0 +1,58 @@
+SELECT * FROM ecommerce.top_us_uni;
+-- step 1: change the column names in sql
+
+alter table ecommerce.top_us_uni
+rename column University_name to University;
+
+-- Q1: How many total universities PRIVATE AND PUBLIC UNIVERSITIES are in US 
+
+select Institution_Type, count(*) as total_Universities 
+from ecommerce.top_us_uni 
+group by Institution_Type;
+
+-- Question 2; which state has most universities?
+
+select State, count(*) as Universities
+from ecommerce.top_us_uni
+group by State 
+order by Universities desc
+limit 10;
+
+
+-- Question 3: Top 10 universities by national rank
+
+select university, National_Rank from ecommerce.top_us_uni
+order by National_Rank asc limit 10;
+
+
+
+-- Question 4: What is the oldest university in US?
+ 
+ select university , founded_year from ecommerce.top_us_uni 
+ order by Founded_Year limit 5;
+ 
+ -- Question 5: How does research impact compare between public and private universities;
+ select Institution_Type, round(AVG(research_impact_score),2) from ecommerce.top_us_uni 
+ GROUP BY Institution_Type;
+ 
+ -- Question 6: Which type of university attract more international student
+ 
+ SELECT 
+    Institution_Type, 
+    ROUND(AVG(Intl_Student_Ratio), 2) AS avg_intl_student_ratio
+FROM ecommerce.top_us_uni
+GROUP BY Institution_Type
+ORDER BY avg_intl_student_ratio DESC;
+ 
+ 
+ -- Question 7  Average international student ratio by institution type
+ 
+SELECT Institution_Type, ROUND(AVG(Intl_Student_Ratio), 2) AS avg_intl_ratio
+FROM ecommerce.top_us_uni
+GROUP BY Institution_Type;
+
+-- Question 8 : Average Employment rate by Public and Private University
+SELECT Institution_Type, ROUND(AVG(Employment_Rate), 2) AS avg_employment_rate
+FROM ecommerce.top_us_uni
+GROUP BY Institution_Type;
+ 
